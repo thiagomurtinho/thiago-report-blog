@@ -1,3 +1,4 @@
+import { withContentlayer } from "next-contentlayer"
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -7,9 +8,15 @@ const nextConfig = {
         hostname: "g-cvtvinpuzol.vusercontent.net",
         port: "",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "bozxmjnovrpwutckazhx.supabase.co",
+        port: "",
+        pathname: "/**"
       }
     ]
   }
 }
 
-export default nextConfig
+export default withContentlayer(nextConfig)

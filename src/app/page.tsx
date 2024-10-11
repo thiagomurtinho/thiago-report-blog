@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { allPosts } from "contentlayer/generated"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -46,7 +47,11 @@ const recentPosts = [
   }
 ]
 
-export default function Home() {
+export default function Page() {
+  const posts = allPosts.sort(
+    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+  )
+
   return (
     <>
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -61,15 +66,15 @@ export default function Home() {
         <h2 className="mb-6 text-2xl font-semibold">Postagens Recentes</h2>
         <Separator className="my-6" />
         <div className="space-y-8">
-          {recentPosts.map(post => (
+          {posts.map(post => (
             <Card
               key={post.id}
               className="overflow-hidden transition-shadow duration-200 hover:shadow-lg"
             >
-              <Link href={`/post/${post.id}`} className="flex flex-col md:flex-row">
+              <Link href={`${post.url}`} className="flex flex-col md:flex-row">
                 <div className="md:w-1/3">
                   <Image
-                    src={post.image}
+                    src={post.cover_image}
                     alt={`Imagem de capa para ${post.title}`}
                     width={400}
                     height={200}
@@ -83,9 +88,9 @@ export default function Home() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-0">
-                    <p className="mb-4 text-muted-foreground">{post.summary}</p>
-                    <time className="text-sm text-muted-foreground" dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString("pt-BR", {
+                    <p className="mb-4 text-muted-foreground">{post.tldr}</p>
+                    <time className="text-sm text-muted-foreground" dateTime={post.created_at}>
+                      {new Date(post.created_at).toLocaleDateString("pt-BR", {
                         year: "numeric",
                         month: "long",
                         day: "numeric"
