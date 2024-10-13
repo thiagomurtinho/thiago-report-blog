@@ -12,6 +12,8 @@ body {
   }
 }
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -96,6 +98,5 @@ body {
       dark:prose-strong:text-white
       prose-strong:font-bold
       ;
-
   }
 }
