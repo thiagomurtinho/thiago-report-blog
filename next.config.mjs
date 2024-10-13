@@ -323,5 +323,5 @@ const nextConfig = {
   }
 }
 
-export default withMDX(nextConfig)
-// export default nextConfig
+// export default withMDX(nextConfig)
+export default nextConfig
