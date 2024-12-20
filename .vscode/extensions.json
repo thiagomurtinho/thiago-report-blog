@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "adpyke.codesnap",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "mhutchie.git-graph",
+    "github.copilot",
+    "github.copilot-chat",
+    "mariusalchimavicius.json-to-ts",
+    "mohsen1.prettify-json",
+    "yoavbls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss",
+    "meganrogge.template-string-converter",
+    "gruntfuggly.todo-tree",
+    "chakrounanas.turbo-console-log"
+  ]
+}

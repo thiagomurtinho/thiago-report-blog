@@ -7,6 +7,12 @@ const nextConfig = {
         hostname: "g-cvtvinpuzol.vusercontent.net",
         port: "",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        port: "",
+        pathname: "/**"
       }
     ]
   }
